@@ -1,13 +1,13 @@
-            // var queryURL= "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search+ "&pub_year="+ startYear + "&pub_year=" +endYear+ "api-key=TfUkpsUh6zophYREhG9khhubSGapnKNJ"
-            var queryURL= "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=TfUkpsUh6zophYREhG9khhubSGapnKNJ"
+            var queryURL= "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searching+ "&api-key=TfUkpsUh6zophYREhG9khhubSGapnKNJ"
+            // var queryURL= "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=TfUkpsUh6zophYREhG9khhubSGapnKNJ""&pub_year="+ startYear + "&pub_year=" +endYear+ "api-key=TfUkpsUh6zophYREhG9khhubSGapnKNJ"
 
-var search=""
+var searching=""
 var numberOfRecords=""
 var startYear= ""
 var endYear =""
 // var url=[]
 // $("button").on("click", function() {
-
+function search(){
 $.ajax({
     url: queryURL,
     method: "GET",
@@ -22,5 +22,8 @@ $.ajax({
           url= results[i].web_url;
           console.log(url)
           }
+          $("#search").append(searching)
+          console.log(searching)
   })
-       
+}
+ search() 
